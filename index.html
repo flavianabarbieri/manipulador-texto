@@ -56,7 +56,7 @@ button{
 }
 
 .azul{
-    background:#4b556d;
+    background:#1d58e2;
 }
 
 .laranja{
@@ -64,7 +64,7 @@ button{
 }
 
 .roxo{
-    background:#8754d6;
+    background:#441d7e;
 }
 
 .verde{
@@ -72,7 +72,7 @@ button{
 }
 
 .vermelho{
-    background:#f44336;
+    background:#ec1a0b;
 }
 
 .verde{
@@ -126,6 +126,9 @@ button{
 
        <button class="verde" onclick="gerarIniciais()">
     FORMATAR NOME
+</button>
+        <button class="azul" onclick="formatarFrase()">
+    FORMATAR FRASE
 </button>
 
         <button class="vermelho" onclick="limpar()">
@@ -267,6 +270,28 @@ function gerarIniciais() {
 
     setStatus("Nome formatado");
 }
+
+function formatarFrase() {
+
+    let linhas = texto.value.split('\n');
+
+    linhas = linhas.map(linha => {
+
+        linha = linha.trim();
+
+        if (linha.length === 0) {
+            return "";
+        }
+
+        return linha.charAt(0).toUpperCase() +
+               linha.slice(1).toLowerCase();
+    });
+
+    texto.value = linhas.join('\n');
+
+    setStatus("Frases formatadas");
+}
+
 </script>
 </body>
 </html>
