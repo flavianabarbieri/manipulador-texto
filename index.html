@@ -76,6 +76,34 @@ textarea{
     gap:10px;
 }
 
+/* botão base (mantém tamanho do código 1) */
+button{
+    border:none;
+    padding:12px;
+    border-radius:6px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+
+    /* efeito moderno adicionado */
+    transition: all 0.25s ease;
+}
+
+/* Ícone */
+.btn i{
+    transition: transform 0.25s ease;
+}
+
+/* Hover geral */
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.btn:hover i{
+    transform: scale(1.2);
+}
+
 button{
     border:none;
     padding:12px;
@@ -85,45 +113,21 @@ button{
     cursor:pointer;
 }
 
-.azul{
-    background:#014D4B;
-}
+.azul{ background:#014D4B; }
+.azul:hover{ background:#00565A; }
 
-.azul:hover{
-    background:#00565A;
-}
+.verde{ background:#06422a; }
+.verde:hover{ background:#007A4A; }
 
-.verde{
-    background:#06422a;
-}
+.roxo{ background:#38a73e; }
+.roxo:hover{ background:#3db843; }
 
-.verde:hover{
-    background:#007A4A;
-}
+.laranja{ background:#146e20; }
+.laranja:hover{ background:#1c7e29; }
 
-.roxo{
-    background:#006B3F;
-}
+.vermelho{ background:#009961; }
+.vermelho:hover{ background:#0faf74; }
 
-.roxo:hover{
-    background:#005332;
-}
-
-.laranja{
-    background:#00995D;
-}
-
-.laranja:hover{
-    background:#005332;
-}
-
-.vermelho{
-    background:#005332  ;
-}
-
-.vermelho:hover{
-    background:#00995D;
-}
 .info{
     display:flex;
     justify-content:space-between;
@@ -145,44 +149,46 @@ button{
 
     <textarea id="texto"   placeholder="Dica: Cole uma lista de nomes ou valores separados por linha ou espaço."></textarea>
 
-      <div class="botoes">
+      <div class="botoes"></button>
 
-        <button class="vermelho" onclick="maiusculas()">MAIÚSCULAS</button>
+        <button class="btn vermelho" onclick="maiusculas()">MAIÚSCULAS</button>
 
-        <button class="azul" onclick="minusculas()">MINÚSCULAS</button>
+        <button class="btn azul" onclick="minusculas()">MINÚSCULAS</button>
 
-        <button class="laranja" onclick="titulo()">TÍTULO</button>
+        <button class="btn laranja" onclick="titulo()">TÍTULO</button>
 
-        <button class="verde" onclick="removerAcentos()">
+        <button class="btn verde" onclick="removerAcentos()">
             REMOVER ACENTOS
         </button>
 
-        <button class="laranja" onclick="removerPontuacao()">
+        <button class="btn laranja" onclick="removerPontuacao()">
             REMOVER . E -
         </button>
 
-        <button class="roxo" onclick="sqlListaIn()">
+        <button class="btn roxo" onclick="sqlListaIn()">
             SQL (LISTA IN)
         </button>
 
-        <button class="azul" onclick="sqlAlias()">
+        <button class="btn azul" onclick="sqlAlias()">
             SQL (COM ALIAS)
         </button>
 
-        <button class="roxo" onclick="copiarTexto()">
+        <button class="btn roxo" onclick="copiarTexto()">
             COPIAR TEXTO
         </button>
 
-       <button class="verde" onclick="gerarIniciais()">
+       <button class="btn verde" onclick="gerarIniciais()">
     FORMATAR NOME
 </button>
-        <button class="azul" onclick="formatarFrase()">
+        <button class="btn azul" onclick="formatarFrase()">
     FORMATAR FRASE
 </button>
 
-        <button class="vermelho" onclick="limpar()">
+        <button class="btn vermelho" onclick="limpar()">
             LIMPAR
         </button>
+
+        
 
     </div>
 
